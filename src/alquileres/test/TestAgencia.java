@@ -1,9 +1,14 @@
+package alquileres.test;
 
 import java.util.Map;
 import java.util.Set;
 
+import alquileres.modelo.AgenciaAlquiler;
+import alquileres.modelo.Coche;
+import alquileres.modelo.Furgoneta;
+
 /**
- *    
+ *   @author Sergio Garrués Aizcorbe 
  */
 public class TestAgencia {
 
@@ -91,8 +96,12 @@ public class TestAgencia {
 	 * inicio de la aplicaciÃ³n
 	 */
 	public static void main(String[] args) {
-		TestAgencia test = new TestAgencia();
-
+		if(args[0].isEmpty())
+		{
+			System.out.println("Error en nº argumentos\nSintaxis: java TestAgencia <nombre-agencia>");
+		}
+		TestAgencia test = new TestAgencia(args[0]);
+		
 		test.testBuscarCoches();
 		test.testCochesOrdenadosMatricula();
 		test.testFurgonetasOrdenadasPorVolumen();
