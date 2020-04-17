@@ -15,7 +15,7 @@ public class Coche extends Vehiculo{
 		this.numPlazas = numPlazas;
 	}
 
-	public int getNumPlazas() {
+	public int getNumPlazas() { 
 		return numPlazas;
 	}
 	public double calcularPrecioAlquiler(int numeroDias) {
@@ -29,4 +29,5 @@ public class Coche extends Vehiculo{
 	public String toString() {
 		return "COCHE\n" + super.toString() + "Plazas: " + numPlazas;
 	}
+
 }

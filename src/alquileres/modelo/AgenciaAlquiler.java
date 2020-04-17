@@ -21,7 +21,7 @@ import alquileres.test.Utilidades;
  * 
  * @author Sergio Garrués Aizcorbe
  */
-public class AgenciaAlquiler {
+public class AgenciaAlquiler implements Comparator<Vehiculo> {
 	private String nombre; // el nombre de la agencia
 	private List<Vehiculo> flota; // la lista de vehÃ­culos
 
@@ -211,5 +211,20 @@ public class AgenciaAlquiler {
 		}
 		return map;
 	}
+
+	
+	public int compare(Vehiculo vehiculo1,Vehiculo vehiculo2) {
+		if (Integer.parseInt(vehiculo1.getMatricula().substring(0, 5)) < Integer
+				.parseInt(vehiculo2.getMatricula().substring(0, 5))) {
+			return -1;
+		}
+		if (Integer.parseInt(vehiculo1.getMatricula().substring(0, 5)) == Integer
+				.parseInt(vehiculo2.getMatricula().substring(0, 5))) {
+			return 0;
+		}
+		return 1;
+
+	}
+	
 
 }
